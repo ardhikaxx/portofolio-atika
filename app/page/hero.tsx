@@ -30,7 +30,7 @@ export default function Hero() {
                     {/* Main Heading */}
                     <div className="space-y-4">
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                            Hai, I am{" "}
+                            Hai, I&apos;m{" "}
                             <span className="bg-linear-to-r from-[#EFB07D] to-[#EFB07D] bg-clip-text text-transparent">
                                 Atika
                             </span>{" "}
@@ -50,7 +50,7 @@ export default function Hero() {
                     {/* Description */}
                     <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
                         Crafting beautiful digital experiences with attention to detail and
-                        passion for innovation. Lets create something amazing together.
+                        passion for innovation. Let&apos;s create something amazing together.
                     </p>
 
                     <div className="flex flex-col lg:flex-row gap-4 pt-4">
