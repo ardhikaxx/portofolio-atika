@@ -14,7 +14,6 @@ export default function Design() {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        // Gunakan raf agar tidak dianggap cascading state update
         const raf = requestAnimationFrame(() => {
             setIsVisible(true);
         });
@@ -34,12 +33,12 @@ export default function Design() {
     return (
         <section
             id="design"
-            className="bg-linear-to-br from-[#fef7f0] via-[#fcf4ed] to-[#f8f1e9] w-full min-h-screen py-20 relative overflow-hidden px-4"
+            className="bg-white w-full min-h-screen py-20 relative overflow-hidden px-4"
         >
             <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-10 left-10 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl animate-float"></div>
-                <div className="absolute bottom-10 right-10 w-96 h-96 bg-pink-200/20 rounded-full blur-3xl animate-float animation-delay-2000"></div>
-                <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-orange-200/25 rounded-full blur-3xl animate-float animation-delay-4000"></div>
+                <div className="absolute top-10 left-10 w-80 h-80 bg-[#EFB07D]/20 rounded-full blur-3xl animate-float"></div>
+                <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#EFB07D]/15 rounded-full blur-3xl animate-float animation-delay-2000"></div>
+                <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-[#EFB07D]/10 rounded-full blur-3xl animate-float animation-delay-4000"></div>
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto">
@@ -47,8 +46,8 @@ export default function Design() {
                     className={`text-center mb-16 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                         }`}
                 >
-                    <div className="inline-flex items-center gap-3 bg-white/70 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/30 shadow-sm mb-6">
-                        <div className="w-3 h-3 bg-linear-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+                    <div className="inline-flex items-center gap-3 bg-white/70 backdrop-blur-md px-6 py-3 rounded-2xl border border-gray-200 shadow-sm mb-6">
+                        <div className="w-3 h-3 bg-[#EFB07D] rounded-full animate-pulse"></div>
                         <span className="text-sm font-semibold text-gray-700 tracking-wide">
                             MY WORK
                         </span>
@@ -56,7 +55,7 @@ export default function Design() {
 
                     <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
                         Design{" "}
-                        <span className="bg-linear-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        <span className="text-[#EFB07D]">
                             Gallery
                         </span>
                     </h2>
@@ -88,7 +87,7 @@ export default function Design() {
                 >
                     <button
                         onClick={() => setShowAll(!showAll)}
-                        className="group relative bg-white/80 backdrop-blur-md text-gray-700 px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl border border-white/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                        className="group relative bg-white/80 backdrop-blur-md text-gray-700 px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl border border-gray-200 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                     >
                         <span className="flex items-center gap-3 relative z-10">
                             {showAll ? "Show Less" : "Show All Designs"}
@@ -107,7 +106,7 @@ export default function Design() {
                                 />
                             </svg>
                         </span>
-                        <div className="absolute inset-0 bg-linear-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-[#EFB07D]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </button>
 
                     <div className="mt-4 text-sm text-gray-500 font-medium">
@@ -156,8 +155,8 @@ function DesignCard({
             className={`group relative transition-all duration-700 delay-${index * 200
                 } ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
         >
-            <div className="absolute -inset-4 bg-linear-to-r from-purple-400/20 to-pink-400/20 rounded-3xl blur-xl group-hover:blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 z-0"></div>
-            <div className="relative bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-white/50 z-10 transform group-hover:scale-[1.02] transition-all duration-500 overflow-hidden">
+            <div className="absolute -inset-4 bg-[#EFB07D]/15 rounded-3xl blur-xl group-hover:blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 z-0"></div>
+            <div className="relative bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-gray-200 z-10 transform group-hover:scale-[1.02] transition-all duration-500 overflow-hidden">
                 <div className="relative aspect-square rounded-2xl overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
                     {!imageLoaded && (
                         <div className="absolute inset-0 bg-linear-to-br from-gray-200 to-gray-300 animate-pulse rounded-2xl"></div>
@@ -176,7 +175,7 @@ function DesignCard({
                         <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                             <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full inline-flex items-center gap-2">
                                 <svg
-                                    className="w-4 h-4 text-purple-600"
+                                    className="w-4 h-4 text-[#EFB07D]"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
