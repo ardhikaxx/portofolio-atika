@@ -54,7 +54,7 @@ export default function About() {
                     <div className={`space-y-8 transition-all duration-700 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}`}>
                         <div className="relative group">
                             <div className="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-gray-200">
-                                <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                                <div className="bg-[#EFB07D]/10 rounded-2xl p-6 text-center">
                                     <div className="w-48 h-48 mx-auto mb-2 bg-[#EFB07D]/20 rounded-full flex items-center justify-center shadow-inner overflow-hidden">
                                         <Image
                                             src="/photo.svg"
