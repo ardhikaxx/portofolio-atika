@@ -55,7 +55,7 @@ export default function About() {
                         <div className="relative group">
                             <div className="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-gray-200">
                                 <div className="bg-gray-50 rounded-2xl p-6 text-center">
-                                    <div className="w-48 h-48 mx-auto mb-6 bg-[#EFB07D]/20 rounded-full flex items-center justify-center shadow-inner overflow-hidden">
+                                    <div className="w-48 h-48 mx-auto mb-2 bg-[#EFB07D]/20 rounded-full flex items-center justify-center shadow-inner overflow-hidden">
                                         <Image
                                             src="/photo.svg"
                                             alt="Atika Wardatul Hasanah"
@@ -66,7 +66,7 @@ export default function About() {
                                         />
                                     </div>
                                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Atika Wardatul Hasanah</h3>
-                                    <p className="text-gray-600 font-medium">Digital Designer</p>
+                                    <p className="text-gray-600 font-medium mb-6">Digital Designer</p>
                                 </div>
                             </div>
 
@@ -84,8 +84,8 @@ export default function About() {
                                 <Image
                                     src="/assets/1.svg"
                                     alt="star"
-                                    width={90}
-                                    height={90}
+                                    width={80}
+                                    height={80}
                                     className="animate-spin-slow"
                                 />
                             </div>
@@ -176,7 +176,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            
+
             <style jsx>{`
                 @keyframes float {
                 0%, 100% { transform: translateY(0px) scale(1); }
