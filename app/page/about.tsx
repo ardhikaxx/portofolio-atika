@@ -54,9 +54,16 @@ export default function About() {
                     <div className={`space-y-8 transition-all duration-700 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}`}>
                         <div className="relative group">
                             <div className="relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-gray-200">
-                                <div className="bg-gray-50 rounded-2xl p-12 text-center">
-                                    <div className="w-48 h-48 mx-auto mb-6 bg-[#EFB07D]/20 rounded-full flex items-center justify-center shadow-inner">
-                                        <div className="text-4xl">👩‍💻</div>
+                                <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                                    <div className="w-48 h-48 mx-auto mb-6 bg-[#EFB07D]/20 rounded-full flex items-center justify-center shadow-inner overflow-hidden">
+                                        <Image
+                                            src="/photo.svg"
+                                            alt="Atika Wardatul Hasanah"
+                                            width={192}
+                                            height={192}
+                                            className="w-full h-full object-cover rounded-full"
+                                            priority
+                                        />
                                     </div>
                                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Atika Wardatul Hasanah</h3>
                                     <p className="text-gray-600 font-medium">Digital Designer</p>
@@ -169,8 +176,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
-
-            {/* Custom CSS for animations */}
+            
             <style jsx>{`
                 @keyframes float {
                 0%, 100% { transform: translateY(0px) scale(1); }
