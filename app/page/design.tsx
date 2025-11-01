@@ -1,0 +1,162 @@
+"use client";
+
+import Image from "next/image";
+import { useState, useEffect } from "react";
+
+export default function Design() {
+    const [showAll, setShowAll] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setIsVisible(true);
+    }, []);
+
+    // Sample design images - replace with your actual images
+    const designImages = [
+        { id: 1, src: "/assets/post1.png", alt: "Design 1" },
+        { id: 2, src: "/assets/post1.png", alt: "Design 2" },
+        { id: 3, src: "/assets/post1.png", alt: "Design 3" },
+        { id: 4, src: "/assets/post1.png", alt: "Design 4" },
+    ];
+
+    const displayedImages = showAll ? designImages : designImages.slice(0, 3);
+
+    return (
+        <section id="design" className="bg-linear-to-br from-[#fef7f0] via-[#fcf4ed] to-[#f8f1e9] w-full min-h-screen py-20 relative overflow-hidden px-4">
+
+            {/* Background Elements */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-10 left-10 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl animate-float"></div>
+                <div className="absolute bottom-10 right-10 w-96 h-96 bg-pink-200/20 rounded-full blur-3xl animate-float animation-delay-2000"></div>
+                <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-orange-200/25 rounded-full blur-3xl animate-float animation-delay-4000"></div>
+            </div>
+
+            <div className="relative z-10 max-w-7xl mx-auto">
+
+                {/* Section Header */}
+                <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <div className="inline-flex items-center gap-3 bg-white/70 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/30 shadow-sm mb-6">
+                        <div className="w-3 h-3 bg-linear-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm font-semibold text-gray-700 tracking-wide">MY WORK</span>
+                    </div>
+
+                    <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                        Design <span className="bg-linear-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Gallery</span>
+                    </h2>
+
+                    <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        A collection of my latest creative works and design projects
+                    </p>
+                </div>
+
+                {/* Design Grid */}
+                <div className={`mb-12 transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {displayedImages.map((design, index) => (
+                            <DesignCard
+                                key={design.id}
+                                design={design}
+                                index={index}
+                                isVisible={isVisible}
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Show All / Show Less Button */}
+                <div className={`text-center transition-all duration-700 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <button
+                        onClick={() => setShowAll(!showAll)}
+                        className="group relative bg-white/80 backdrop-blur-md text-gray-700 px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl border border-white/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                    >
+                        <span className="flex items-center gap-3 relative z-10">
+                            {showAll ? "Show Less" : "Show All Designs"}
+                            <svg
+                                className={`w-5 h-5 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+
+                        {/* Hover gradient effect */}
+                        <div className="absolute inset-0 bg-linear-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </button>
+
+                    {/* Design count indicator */}
+                    <div className="mt-4 text-sm text-gray-500 font-medium">
+                        Showing {displayedImages.length} of {designImages.length} designs
+                    </div>
+                </div>
+            </div>
+
+            {/* Custom CSS for animations */}
+            <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(-20px) scale(1.05); }
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+      `}</style>
+        </section>
+    );
+}
+
+// Design Card Component
+function DesignCard({ design, index, isVisible }: { design: any; index: number; isVisible: boolean }) {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    return (
+        <div
+            className={`group relative transition-all duration-700 delay-${index * 200} ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                }`}
+        >
+            {/* Card Glow Effect */}
+            <div className="absolute -inset-4 bg-linear-to-r from-purple-400/20 to-pink-400/20 rounded-3xl blur-xl group-hover:blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 z-0"></div>
+            <div className="relative bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-white/50 z-10 transform group-hover:scale-[1.02] transition-all duration-500 overflow-hidden">
+
+                {/* Image Container */}
+                <div className="relative aspect-square rounded-2xl overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
+                    {/* Loading Skeleton */}
+                    {!imageLoaded && (
+                        <div className="absolute inset-0 bg-linear-to-br from-gray-200 to-gray-300 animate-pulse rounded-2xl"></div>
+                    )}
+
+                    {/* Actual Image */}
+                    <Image
+                        src={design.src}
+                        alt={design.alt}
+                        fill
+                        className={`object-cover transition-all duration-700 ${imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                            } group-hover:scale-110`}
+                        onLoad={() => setImageLoaded(true)}
+                    />
+
+                    {/* Overlay on Hover */}
+                    <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6">
+                        <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full inline-flex items-center gap-2">
+                                <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                <span className="text-sm font-medium text-gray-700">View</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
