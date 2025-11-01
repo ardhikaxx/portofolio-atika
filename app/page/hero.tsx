@@ -27,7 +27,6 @@ export default function Hero() {
                         </span>
                     </div>
 
-                    {/* Main Heading */}
                     <div className="space-y-4">
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                             Hai, I&apos;m{" "}
@@ -47,7 +46,6 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    {/* Description */}
                     <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
                         Crafting beautiful digital experiences with attention to detail and
                         passion for innovation. Let&apos;s create something amazing together.
