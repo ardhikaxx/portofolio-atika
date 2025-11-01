@@ -23,9 +23,9 @@ export default function Design() {
 
     const designImages: DesignItem[] = [
         { id: 1, src: "/assets/post1.png", alt: "Design 1" },
-        { id: 2, src: "/assets/post1.png", alt: "Design 2" },
-        { id: 3, src: "/assets/post1.png", alt: "Design 3" },
-        { id: 4, src: "/assets/post1.png", alt: "Design 4" },
+        { id: 2, src: "/assets/post2.png", alt: "Design 2" },
+        { id: 3, src: "/assets/post3.png", alt: "Design 3" },
+        { id: 4, src: "/assets/post4.png", alt: "Design 4" },
     ];
 
     const displayedImages = showAll ? designImages : designImages.slice(0, 3);
