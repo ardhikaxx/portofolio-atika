@@ -57,8 +57,8 @@ export default function Hero() {
                             <div className="absolute inset-0 bg-[#EFB07D] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </button>
 
-                        <button className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold hover:border-[#EFB07D] hover:text-[#EFB07D] transform hover:-translate-y-1 transition-all duration-300 text-center">
-                            <span className="flex items-center gap-2">
+                        <button className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold hover:border-[#EFB07D] hover:text-[#EFB07D] transform hover:-translate-y-1 transition-all duration-300 flex justify-center items-center">
+                            <span className="flex items-center gap-2 text-center">
                                 Download CV
                                 <svg
                                     className="w-4 h-4 group-hover:translate-x-1 transition-transform"
