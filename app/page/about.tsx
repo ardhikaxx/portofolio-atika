@@ -26,9 +26,21 @@ export default function About() {
     ];
 
     const tools = [
-        { name: "Canva", icon: "🎨", color: "from-[#EFB07D] to-[#EFB07D]" },
-        { name: "Ibis Paint", icon: "🖌️", color: "from-[#EFB07D] to-[#EFB07D]" },
-        { name: "Figma", icon: "🔹", color: "from-[#EFB07D] to-[#EFB07D]" },
+        { 
+            name: "Canva", 
+            icon: "/assets/logo/canva.svg",
+            color: "from-[#EFB07D] to-[#EFB07D]" 
+        },
+        { 
+            name: "Ibis Paint", 
+            icon: "/assets/logo/ibis-paint.svg",
+            color: "from-[#EFB07D] to-[#EFB07D]" 
+        },
+        { 
+            name: "Infinite Design", 
+            icon: "/assets/logo/infinite-design.svg",
+            color: "from-[#EFB07D] to-[#EFB07D]" 
+        },
     ];
 
     return (
@@ -165,8 +177,14 @@ export default function About() {
                                         key={tool.name}
                                         className="group bg-white/80 rounded-2xl p-4 shadow-lg border border-gray-100 hover:shadow-xl hover:border-[#EFB07D]/50 transition-all duration-300 transform hover:-translate-y-1 text-center cursor-pointer"
                                     >
-                                        <div className={`w-16 h-16 mx-auto mb-3 rounded-2xl bg-[#EFB07D] flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300 shadow-md`}>
-                                            {tool.icon}
+                                        <div className={`w-16 h-16 mx-auto mb-3 rounded-2xl bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md p-2`}>
+                                            <Image
+                                                src={tool.icon}
+                                                alt={tool.name}
+                                                width={40}
+                                                height={40}
+                                                className="w-full h-full object-contain"
+                                            />
                                         </div>
                                         <div className="font-semibold text-gray-800 text-sm">{tool.name}</div>
                                     </div>
