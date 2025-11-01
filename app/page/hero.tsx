@@ -83,25 +83,21 @@ export default function Hero() {
                         <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#EFB07D] rounded-2xl rotate-12 z-0"></div>
                         <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#EFB07D] rounded-2xl -rotate-12 z-0"></div>
 
-                        <div className="relative bg-white rounded-3xl p-4 shadow-2xl z-10 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-4 shadow-2xl z-10 transform rotate-3 hover:rotate-0 transition-transform duration-500">
                             <div className="bg-linear-to-br from-gray-100 to-gray-200 rounded-2xl w-full h-96 flex items-center justify-center overflow-hidden">
-                                <div className="text-center text-gray-400">
-                                    <svg
-                                        className="w-24 h-24 mx-auto mb-4"
-                                        fill="currentColor"
-                                        viewBox="0 0 20 20">
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                            clipRule="evenodd"
-                                        />
-                                    </svg>
-                                    <p>Foto Ayang disini</p>
+                                <div className="w-full h-full relative">
+                                    <Image
+                                        src="/photo.svg"
+                                        alt="Atika Wardatul Hasanah"
+                                        fill
+                                        className="object-cover rounded-2xl"
+                                        priority
+                                    />
                                 </div>
                             </div>
                         </div>
 
-                        <div className="absolute -top-4 -right-4 bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-lg z-20 rotate-12">
+                        <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-lg p-3 rounded-2xl shadow-lg z-20 rotate-12">
                             <Image
                                 src="/assets/1.svg"
                                 alt="star"
@@ -111,7 +107,7 @@ export default function Hero() {
                             />
                         </div>
 
-                        <div className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-lg z-20 -rotate-12">
+                        <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-lg p-4 rounded-2xl shadow-lg z-20 -rotate-12">
                             <Image
                                 src="/assets/3.svg"
                                 alt="tape"
@@ -121,7 +117,7 @@ export default function Hero() {
                             />
                         </div>
 
-                        <div className="absolute bottom-8 -right-8 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-lg z-20 -rotate-6">
+                        <div className="absolute bottom-8 -right-8 bg-white/10 backdrop-blur-lg p-4 rounded-2xl shadow-lg z-20 -rotate-6">
                             <Image
                                 src="/assets/4.svg"
                                 alt="chibi"
