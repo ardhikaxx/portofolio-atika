@@ -7,8 +7,11 @@ export default function About() {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setIsVisible(true);
+        const raf = requestAnimationFrame(() => {
+            setIsVisible(true);
+        });
+
+        return () => cancelAnimationFrame(raf);
     }, []);
 
     const designTypes = [
