@@ -35,12 +35,6 @@ export default function Design() {
             id="design"
             className="bg-white w-full min-h-screen py-20 relative overflow-hidden px-4"
         >
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-10 left-10 w-80 h-80 bg-[#EFB07D]/20 rounded-full blur-3xl animate-float"></div>
-                <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#EFB07D]/15 rounded-full blur-3xl animate-float animation-delay-2000"></div>
-                <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-[#EFB07D]/10 rounded-full blur-3xl animate-float animation-delay-4000"></div>
-            </div>
-
             <div className="relative z-10 max-w-7xl mx-auto">
                 <div
                     className={`text-center mb-16 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
@@ -173,9 +167,9 @@ function DesignCard({
 
                     <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6">
                         <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                            <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full inline-flex items-center gap-2">
+                            <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full inline-flex items-center gap-1">
                                 <svg
-                                    className="w-4 h-4 text-[#EFB07D]"
+                                    className="w-6 h-6 text-[#EFB07D]"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
